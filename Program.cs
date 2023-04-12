@@ -1,3 +1,5 @@
+using TBPP_LABS.Models;
+
 namespace TBPP_LABS
 {
     public class Program
@@ -29,6 +31,8 @@ namespace TBPP_LABS
             app.MapRazorPages();
 
             app.Run();
+
+            Person person = new Person("Jake", "Moor");
         }
     }
 }
