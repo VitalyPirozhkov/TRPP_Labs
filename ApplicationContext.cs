@@ -7,7 +7,10 @@ namespace TBPP_LABS
     public class ApplicationContext : DbContext
     {
         public DbSet<Person> Persons => Set<Person>();
-        public ApplicationContext() => Database.EnsureCreated();
+        public ApplicationContext()
+        {
+            //    Database.EnsureCreated();
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
