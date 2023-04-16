@@ -6,6 +6,11 @@
     public class Person
     {
         /// <summary>
+        /// ID человека.
+        /// </summary>
+        public double id { get; set; }
+
+        /// <summary>
         /// Имя человека.
         /// </summary>
         public string FirstName { get; set; }
