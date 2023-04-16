@@ -27,7 +27,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: showmigrate
-      run: Update-Database
+      run: dotnet ef migrations bundle
     - name: Show everything
       run: tree
     # Store the artifact
