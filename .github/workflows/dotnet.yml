@@ -26,6 +26,8 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: migrate
+      run: dotnet ef database update
     - name: showmigrate
       run: dotnet ef migrations bundle
     - name: Show everything
