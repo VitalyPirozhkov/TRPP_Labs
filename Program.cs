@@ -42,6 +42,7 @@ namespace TBPP_LABS
             app.Run();
 
             Person person = new Person("Jake", "Moor");
+            Person person1 = new Person("Jake", "Moor1");
         }
     }
 }
