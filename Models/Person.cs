@@ -25,6 +25,10 @@
         /// </summary>
         public string LastName { get; set; }
 
+        /// <summary>
+        /// age человека.
+        /// </summary>
+        public int age { get; set; }
 
         /// <summary>Создает новый экземпляр класса Person с заданными именем, фамилией и датой рождения.</summary>
         /// <param name="firstName">Имя человека.</param>
