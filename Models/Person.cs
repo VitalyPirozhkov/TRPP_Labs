@@ -18,6 +18,11 @@
         /// <summary>
         /// Фамилия человека.
         /// </summary>
+        public string MidName { get; set; }
+
+        /// <summary>
+        /// Фамилия человека.
+        /// </summary>
         public string LastName { get; set; }
 
 
