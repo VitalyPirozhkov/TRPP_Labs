@@ -22,11 +22,18 @@ jobs:
 
     - name: Build project
       run: dotnet build --configuration Release
+      
+    - name: Install Chocolatey
+      run: |
+        Set-ExecutionPolicy Bypass -Scope Process -Force;
+        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+
+    - name: Install Doxygen
+      run: choco install doxygen.install -y
 
     - name: Generate documentation
-      run: |
-        sudo apt-get install -y doxygen
-        doxygen Doxyfile
+      run: doxygen Doxyfile
       working-directory: D:\a\TRPP_Labs\TRPP_Labs
 
     - name: Archive documentation
