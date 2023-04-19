@@ -23,16 +23,10 @@ jobs:
     - name: Build project
       run: dotnet build --configuration Release
 
-    - name: Delete old stryker-config.json file
-      run: rm stryker-config.json || true
-      working-directory: D:\a\TRPP_Labs\TRPP_Labs
-
-    - name: Create new stryker-config.json file
-      run: echo '{"dashboard": {"reportType": "json"},"reporters": ["html","dashboard"],"mutate": ["**/*"], "testRunner": "command", "commandRunner": { "command": "dotnet test -p:CollectCoverage=true" }, "coverageAnalysis": "perTest", "timeoutMS": 10000, "maxConcurrentTestRunners": 2, "logLevel": "info", "thresholds": { "high": 80, "low": 60, "break": 0 }, "ignoreMethods": ["Equals", "GetHashCode", "GetType", "ToString"]}' >> stryker-config.json
-      working-directory: D:\a\TRPP_Labs\TRPP_Labs
-
     - name: Generate documentation
-      run: dotnet tool install --global dotnet-stryker && dotnet stryker --config-file stryker-config.json
+      run: |
+        sudo apt-get install -y doxygen
+        doxygen Doxyfile
       working-directory: D:\a\TRPP_Labs\TRPP_Labs
 
     - name: Archive documentation
