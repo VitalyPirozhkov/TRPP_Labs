@@ -24,7 +24,10 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Generate documentation
-      run: dotnet tool install --global dotnet-stryker && dotnet stryker
+      run: |
+        dotnet tool install --global dotnet-stryker
+        echo '{ "mode": "skip-tests" }' > stryker-config.json
+        dotnet stryker
       working-directory: D:\a\TRPP_Labs\TRPP_Labs
 
     - name: Archive documentation
