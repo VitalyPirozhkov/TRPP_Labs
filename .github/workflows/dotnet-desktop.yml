@@ -25,10 +25,10 @@ jobs:
 
     - name: Generate documentation
       run: dotnet tool install --global dotnet-stryker && dotnet stryker
-      working-directory: \
+      working-directory: D:\a\TRPP_Labs\TRPP_Labs
 
     - name: Archive documentation
       uses: actions/upload-artifact@v2
       with:
         name: Documentation
-        path: \doc
+        path: D:\a\TRPP_Labs\TRPP_Labs\doc
